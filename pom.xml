@@ -13,11 +13,10 @@
 	</prerequisites>
 
 	<properties>
-		<activepivot.version>5.7.7</activepivot.version>
-		<activeui.version>4.2.7</activeui.version>
-		<webjars.version>16.3.1</webjars.version>
+		<activepivot.version>5.7.8</activepivot.version>
+		<activeui.version>4.2.10</activeui.version>
 		<javax.servlet.version>4.0.1</javax.servlet.version>
-		<jetty.version>9.4.14.v20181114</jetty.version>
+		<jetty.version>9.4.16.v20190411</jetty.version>
 	</properties>
 
 	<dependencyManagement>
@@ -82,18 +81,8 @@
 	        <!-- ActiveUI dependencies -->
 	        <dependency>
 	          <groupId>com.activeviam.activeui</groupId>
-	          <artifactId>activeui-sdk</artifactId>
-	                <version>${activeui.version}</version>
-	        </dependency>
-	        <dependency>
-	            <groupId>org.webjars.npm</groupId>
-	            <artifactId>react</artifactId>
-	            <version>${webjars.version}</version>
-	        </dependency>
-	        <dependency>
-	            <groupId>org.webjars.npm</groupId>
-	            <artifactId>react-dom</artifactId>
-	            <version>${webjars.version}</version>
+	          <artifactId>activeui</artifactId>
+	          <version>${activeui.version}</version>
 	        </dependency>
 
 		</dependencies>
@@ -141,16 +130,8 @@
 	    <!-- ActiveUI dependencies -->
 	    <dependency>
 	      <groupId>com.activeviam.activeui</groupId>
-	      <artifactId>activeui-sdk</artifactId>
+	      <artifactId>activeui</artifactId>
 	    </dependency>
-         <dependency>
-             <groupId>org.webjars.npm</groupId>
-             <artifactId>react</artifactId>
-         </dependency>
-         <dependency>
-             <groupId>org.webjars.npm</groupId>
-             <artifactId>react-dom</artifactId>
-         </dependency>
 
 	</dependencies>
 
