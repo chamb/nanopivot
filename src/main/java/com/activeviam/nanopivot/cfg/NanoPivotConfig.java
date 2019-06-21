@@ -12,11 +12,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.activeviam.copper.Registrations;
 import com.activeviam.nanopivot.cfg.datastore.DatastoreDescriptionConfig;
 import com.activeviam.nanopivot.cfg.pivot.NanoPivotManagerConfig;
-import com.activeviam.nanopivot.cfg.security.NanoPivotCorsFilterConfig;
+import com.activeviam.nanopivot.cfg.security.CorsFilterConfig;
 import com.activeviam.nanopivot.cfg.security.SecurityConfig;
 import com.qfs.server.cfg.IDatastoreConfig;
 import com.qfs.server.cfg.i18n.impl.LocalI18nConfig;
@@ -40,7 +41,8 @@ import com.quartetfs.fwk.monitoring.jmx.impl.JMXEnabler;
  * @author ActiveViam
  *
  */
-@PropertySource(value = { "classpath:nano.properties", "classpath:jwt.properties" })
+@PropertySource(value = "classpath:jwt.properties")
+@EnableWebMvc
 @Configuration
 @Import(value = {
 		ActivePivotConfig.class,
@@ -53,7 +55,7 @@ import com.quartetfs.fwk.monitoring.jmx.impl.JMXEnabler;
 		LocalContentServiceConfig.class,
 		LocalI18nConfig.class,
 		SecurityConfig.class,
-		NanoPivotCorsFilterConfig.class,
+		CorsFilterConfig.class,
 		ActiveUIResourceServerConfig.class,
 
 		ActivePivotServicesConfig.class,

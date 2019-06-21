@@ -18,7 +18,6 @@ import org.springframework.context.annotation.DependsOn;
 import org.springframework.core.env.Environment;
 
 import com.activeviam.nanopivot.cfg.datastore.DatastoreDescriptionConfig;
-import com.qfs.gui.impl.JungSchemaPrinter;
 import com.qfs.store.IDatastore;
 import com.qfs.store.impl.SchemaPrinter;
 import com.qfs.store.transaction.ITransactionManager;
@@ -98,15 +97,9 @@ public class DataLoadingConfig {
    
 	private void printStoreSizes() {
 
-		// add some logging
-		if (Boolean.parseBoolean(env.getProperty("storeStructure.display", "true"))) {
-			// display the graph
-			new JungSchemaPrinter(false).print("NanoPivot datastore", datastore);
-
-			// example of printing a store content
-			SchemaPrinter.printStore(datastore, DatastoreDescriptionConfig.STORE_ORDERS);
-			SchemaPrinter.printStore(datastore, DatastoreDescriptionConfig.STORE_PRODUCTS);
-		}
+		// example of printing a store content
+		SchemaPrinter.printStore(datastore, DatastoreDescriptionConfig.STORE_ORDERS);
+		SchemaPrinter.printStore(datastore, DatastoreDescriptionConfig.STORE_PRODUCTS);
 
 		// Print stop watch profiling
 		StopWatch.get().printTimings();
